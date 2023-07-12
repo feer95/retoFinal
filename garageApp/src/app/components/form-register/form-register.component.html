@@ -1,0 +1,71 @@
+<form>
+    <div class="login-group">
+      <h2>REGISTRATE</h2>
+      <div class="form-control">
+        <input type="text" class="form-control" name="nombre" placeholder="Nombre" [(ngModel)]="user.nombre" #nombreId="ngModel"
+          [ngClass]="{ 'is-invalid': (nombreId.dirty || nombreId.touched) && nombreId.invalid }" required>
+        <div *ngIf="(nombreId.dirty || nombreId.touched) && nombreId.invalid" class="form-control-error">
+          <div class="hueco">
+            <div *ngIf="nombreId.errors?.['required']">Nombre obligatorio</div>
+            <img class="engine" src="./assets/img/avisoError.png">
+          </div>
+        </div>
+      </div>
+      <div class="form-control">
+        <input type="text" class="form-control" name="apellido" placeholder="Apellido" [(ngModel)]="user.apellidos" #apellidoId="ngModel"
+          [ngClass]="{ 'is-invalid': (apellidoId.dirty || apellidoId.touched) && apellidoId.invalid }" required>
+        <div *ngIf="(apellidoId.dirty || apellidoId.touched) && apellidoId.invalid" class="form-control-error">
+          <div class="hueco">
+            <div *ngIf="apellidoId.errors?.['required']">Apellido obligatorio</div>
+            <img class="engine" src="./assets/img/avisoError.png">
+          </div>
+        </div>
+      </div>
+      <div class="form-control">
+        <input type="email" class="form-control" name="email" placeholder="Email" [(ngModel)]="user.email" #emailId="ngModel"
+          [ngClass]="{ 'is-invalid': (emailId.dirty || emailId.touched) && emailId.invalid }" email required>
+        <div *ngIf="(emailId.dirty || emailId.touched) && emailId.invalid" class="form-control-error">
+          <div class="hueco">
+            <div *ngIf="emailId.errors?.['required']">Email obligatorio</div>
+            <div *ngIf="emailId.errors?.['email']">Email no válido</div>
+            <img class="engine" src="./assets/img/avisoError.png">
+          </div>
+        </div>
+      </div>
+      <div class="form-control">
+        <input type="password" class="form-control" name="password" placeholder="Contraseña" [(ngModel)]="user.password" #passwordId="ngModel"
+          [ngClass]="{ 'is-invalid': (passwordId.dirty || passwordId.touched) && passwordId.invalid }" minlength="8" required>
+        <div *ngIf="(passwordId.dirty || passwordId.touched) && passwordId.invalid" class="form-control-error">
+          <div class="hueco">
+            <div *ngIf="passwordId.errors?.['required']">Contraseña obligatoria</div>
+            <div *ngIf="passwordId.errors?.['minlength']">8 Caracteres mínimo</div>
+            <img class="engine" src="./assets/img/avisoError.png">
+          </div>
+        </div>
+      </div>
+      <div class="form-control">
+        <input type="password" class="form-control" name="confirmPassword" placeholder="Repetir Contraseña"
+          [(ngModel)]="user.confirmPassword" #confirmPasswordId="ngModel"
+          [ngClass]="{ 'is-invalid': (confirmPasswordId.dirty || confirmPasswordId.touched) && confirmPasswordId.invalid }" minlength="8"
+          required>
+        <div *ngIf="(confirmPasswordId.dirty || confirmPasswordId.touched) && confirmPasswordId.invalid" class="form-control-error">
+          <div class="hueco">
+            <div *ngIf="confirmPasswordId.errors?.['required']">Repetir Contraseña obligatoria</div>
+            <div *ngIf="user.confirmPassword !== user.password">Las contraseñas no coinciden</div>
+            <img class="engine" src="./assets/img/avisoError.png">
+          </div>
+        </div>
+      </div>
+      <div class="btn">
+        <button type="submit">
+          <img
+            src="https://static.vecteezy.com/system/resources/previews/009/304/571/non_2x/start-and-stop-engine-button-clipart-design-illustration-free-png.png"
+            alt="">
+        </button>
+      </div>
+      <div class="register-link">
+        ¿Ya tienes una cuenta? <a href="/login">Iniciar sesión</a>
+      </div>
+    </div>
+  </form>
+  

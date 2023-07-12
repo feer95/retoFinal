@@ -1,0 +1,23 @@
+<div class="card-container">
+    <div class="card" *ngFor="let car of cars">
+      <button routerLink="/historial">
+        <div class="front">
+          <img [src]="getImageUrl(car.marca)" alt="Car Image">
+        </div>
+        <div class="back">
+          <h2>{{ car.marca }} {{ car.modelo }}</h2>
+          <div class="car-details">
+            <p>Año de fabricación: <span class="dato">{{ car.anoFabricacion }}</span></p>
+            <p>Km: <span class="dato">{{ car.kilometraje }}</span></p>
+            <p>Cv: <span class="dato">{{ car.cv }}</span></p>
+            <p>Combustible: <span class="dato">{{ car.combustible }}</span></p>
+            <p>Color: <span class="dato">{{ car.color }}</span></p>
+          </div>
+          <div class="matricula">
+            <div class="azul"> * </div>
+            <div class="blanco">{{ car.matricula }}</div>
+          </div>
+        </div>
+      </button>
+    </div>
+</div>

@@ -1,0 +1,128 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  main {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+
+  }
+  
+  .botones {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding-top: 2%;
+    margin-bottom: 50px;
+  }
+  
+  .entrada {
+    width: 45vw;
+    padding: 5%;
+    font-size: 80px;
+    display: flex;
+    justify-content: center;
+    font-family: var(--titulo);
+    color: #b4b1b1;
+    text-shadow: 0 0 10px #ff0000, 0 0 20px #ff0000, 0 0 30px #ff0000, 0 0 40px #ff0000, 0 0 70px #ff0000, 0 0 80px #ff0000, 0 0 100px #ff0000, 0 0 150px #ff0000;
+    animation: entrada .8s ease-in-out infinite alternate;
+  }
+  
+  @keyframes entrada {
+    0% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .entradaBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: none;
+    border: none;
+  }
+
+  .contenedorTexto {
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    width: 100vw;
+  }
+  
+  .btns {
+    padding-left: 50px;
+    padding-right: 50px;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+    background: var(--secondary-color);
+    border: none;
+    border-radius: 10px;
+    color: rgb(194, 192, 192);
+    font-size: larger;
+    cursor: pointer;
+  }
+  
+  .btns:hover {
+    font-family: 'Dancing Script', cursive;
+    color: #b4b1b1;
+    background: none;
+    text-shadow: 0 0 10px #ff0000, 0 0 20px #ff3333, 0 0 30px #ff6666, 0 0 40px #ff9999, 0 0 70px #ffcccc, 0 0 80px #ffdddd, 0 0 100px #ffeeee, 0 0 150px #ffffff;
+    animation: btns .8s ease-in-out infinite alternate;
+  }
+  
+  @keyframes btns {
+    0% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    main {
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  
+  .boton1 {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 20px; 
+    left: 20px; 
+    border: 2px solid red;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 25px 0 rgb(117, 116, 116), 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .boton1:hover {
+    border: none;
+    background-color: var(--third-color);
+    box-shadow: 0 0 25px 0 rgb(255, 0, 0), 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+  }
+  
+  .boton1 button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .boton1 img {
+    width: 100%;
+    height: 100%;
+  }

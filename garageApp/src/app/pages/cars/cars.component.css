@@ -1,0 +1,163 @@
+body {
+    width: 100vw;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.nombre{
+    display: flex;
+    justify-content: center;
+    width: 50vw;
+    font-family: var(--titulo);
+    font-size: 15px;
+    align-items: flex-end;
+}
+.name{
+    font-family: var(--texto);
+    padding-right: 20px;
+    color: #b4b1b1;
+    text-shadow: 0 0 5px #ff0000, 0 0 5px #ff0000, 0 0 30px #ff0000, 0 0 5px #ff0000, 0 0 5px #ff0000, 0 0 5px #ff0000, 0 0 5px #ff0000, 0 0 5px #ff0000;
+    animation: entrada .8s ease-in-out infinite alternate;
+  }
+  
+  @keyframes entrada {
+    0% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+
+
+.presentacion{
+    width: 100vw;
+    height: 20vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.cardsCars{
+    width: 100vw;
+    height: auto;
+    background-color: var(--third-color);
+}
+
+.opciones{
+    width: 25vw;
+    height: 20vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.opciones1{
+    width: 25vw;
+    height: 20vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+button{
+border: none ;
+cursor: pointer;
+display: flex;
+flex-direction: column;
+align-items: center;
+align-items: center;
+background-color: rgba(0, 0, 0, 0);
+}
+
+.boton1{
+    width: 22%;
+    height: 53%;
+    border: 2px solid red;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 25px 0 rgb(117, 116, 116), 0 20px 25px 0 rgba(0, 0, 0, 0.2);  
+}
+.boton1:hover{
+    border: none;
+    background-color: var(--third-color);
+    box-shadow: 0 0 25px 0 rgb(255, 0, 0), 0 20px 25px 0 rgba(0, 0, 0, 0.2);  
+}
+.boton2{
+    width: 22%;
+    height: 53%;
+    border: 2px solid red;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 25px 0 rgb(117, 116, 116), 0 20px 25px 0 rgba(0, 0, 0, 0.2);  
+}
+.boton2:hover{
+    border: none;
+    background-color: var(--third-color);
+    box-shadow: 0 0 25px 0 rgb(255, 0, 0), 0 20px 25px 0 rgba(0, 0, 0, 0.2);  
+}
+.boton3{
+    width: 22%;
+    height: 53%;
+    border: 2px solid red;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 25px 0 rgb(117, 116, 116), 0 20px 25px 0 rgba(0, 0, 0, 0.2);  
+}
+.boton3:hover{
+    border: none;
+    background-color: var(--third-color);
+    box-shadow: 0 0 25px 0 rgb(255, 0, 0), 0 20px 25px 0 rgba(0, 0, 0, 0.2);  
+}
+.boton4{
+    width: 22%;
+    height: 53%;
+    border: 2px solid red;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 25px 0 rgb(117, 116, 116), 0 20px 25px 0 rgba(0, 0, 0, 0.2);  
+}
+.boton4:hover{
+    border: none;
+    background-color: var(--third-color);
+    box-shadow: 0 0 25px 0 rgb(255, 0, 0), 0 20px 25px 0 rgba(0, 0, 0, 0.2);  
+}
+
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.boton1 img {
+    max-width: 70%;
+    max-height: 70%;
+  }
+
+
+.modal-title {
+    width: 100%;
+    background-color: red;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-family: var(--texto);
+}
+.modal-footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    background-color: red;
+}
+
+  

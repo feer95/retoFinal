@@ -1,0 +1,329 @@
+body {
+    width: 100vw;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.titulo{
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    font-family: var(--titulo);
+    font-size: 15px;
+    align-items: flex-end;
+}
+.coche{
+    font-family: var(--texto);
+    padding: 20px;
+    color: #b4b1b1;
+    text-shadow: 0 0 5px #ff0000, 0 0 5px #ff0000, 0 0 30px #ff0000, 0 0 5px #ff0000, 0 0 5px #ff0000, 0 0 5px #ff0000, 0 0 5px #ff0000, 0 0 5px #ff0000;
+    animation: entrada .8s ease-in-out infinite alternate;
+  }
+  
+  @keyframes entrada {
+    0% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+
+
+.presentacion{
+    width: 100vw;
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.historial {
+    width: 100vw;
+    height: auto;
+    padding: 10px;
+    background-color: var(--third-color);
+    display: flex;
+    align-items: center
+;}
+
+button{
+  border: none;
+  width: 20vw;
+  border: 2px solid red;
+  color: red;
+  background-color: #b4b1b100;
+  padding: 10px;
+  border-radius:10px ;
+  cursor: pointer;
+}
+button:hover{
+  background-color: red;
+  color: white;
+
+}
+
+.cajaSearch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25vw;
+  height: 80vh;
+}
+
+.containerSearch {
+  position: relative;
+}
+
+.containerSearch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25vw;
+  height: 80vh;
+}
+
+.containerSearch .search {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  background: var(--secondary-color);
+  border-radius: 50%;
+  transition: all 1s;
+  z-index: 4;
+  box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
+}
+
+.containerSearch .search:hover {
+  cursor: pointer;
+}
+
+.containerSearch .search::before {
+  content: "";
+  position: absolute;
+  margin: auto;
+  top: 22px;
+  right: 0;
+  bottom: 0;
+  left: 22px;
+  width: 12px;
+  height: 2px;
+  background: white;
+  transform: rotate(45deg);
+  transition: all .5s;
+}
+
+.containerSearch .search::after {
+  content: "";
+  position: absolute;
+  margin: auto;
+  top: -5px;
+  right: 0;
+  bottom: 0;
+  left: -5px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid white;
+  transition: all .5s;
+}
+
+.containerSearch input {
+  font-family: 'Inconsolata', monospace;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  outline: none;
+  border: none;
+  background: crimson;
+  color: white;
+  text-shadow: 0 0 10px crimson;
+  padding: 0 80px 0 20px;
+  border-radius: 30px;
+  box-shadow: 0 0 25px 0 crimson, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+  transition: all 1s;
+  opacity: 0;
+  z-index: 5;
+  font-weight: bolder;
+  letter-spacing: 0.1em;
+}
+
+.containerSearch input:hover {
+  cursor: pointer;
+}
+
+.containerSearch input:focus {
+  width: 300px;
+  opacity: 1;
+  cursor: text;
+}
+
+.containerSearch input:focus ~ .search {
+  right: -250px;
+  background: #d9d9d9;
+  z-index: 6;
+}
+
+.containerSearch input:focus ~ .search::before {
+  top: 0;
+  left: 0;
+  width: 25px;
+  background: var(--secondary-color);
+}
+
+.containerSearch input:focus ~ .search::after {
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 2px;
+  border: none;
+  background: var(--secondary-color);
+  border-radius: 0%;
+  transform: rotate(-45deg);
+}
+
+.containerSearch input::placeholder {
+  color: white;
+  opacity: 0.5;
+  font-family: var(--texto);
+
+}
+
+.containerSearch input:focus {
+  width: 300px;
+  opacity: 1;
+  cursor: text;
+  color: #ffffff; 
+}
+
+
+
+.cajaAdd {
+  width: 25vw;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.addButton {
+  padding: 10px 20px;
+  color: red;
+  width: 60px;
+  border: 2px solid red;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.serviceForm {
+  display: none;
+  padding-bottom: 25px;
+}
+.serviceForm input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  color: #333;
+  color: var(--secondary-color); 
+  font-family: var(--texto); 
+  text-align: center;
+  background-color: white;
+}
+
+.cajaAdd:hover .serviceForm {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin-top: 20px;
+}
+
+.serviceForm input::placeholder{
+  color: var(--secondary-color); 
+  font-family: var(--texto); 
+  text-align: center;
+  background-color: white;
+}
+
+.serviceForm input,
+.serviceForm textarea,
+.serviceForm button {
+  margin-bottom: 25px;
+}
+
+
+.button {
+  border: none;
+  width: 80px;
+  height: 80px;
+  border: 2px solid red;
+  color: red;
+  background-color: #b4b1b100;
+  padding: 0;
+  border-radius: 50%;
+  font-size: 30px;
+  text-align: center;
+  cursor: pointer;
+  box-shadow: 0 0 25px 0 rgb(117, 116, 116), 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+}
+
+.button:hover {
+  background-color: red;
+  color: white;
+  text-align: center;
+}
+h2{
+  width: 100%;
+  padding-bottom: 25px;
+  text-align: center;
+  font-family: var(--titulo);
+  color: var(--secondary-color);
+}
+
+.boton1 {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 40px; 
+  left: 20px; 
+  border: 2px solid red;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 25px 0 rgb(117, 116, 116), 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+}
+
+.boton1:hover {
+  border: none;
+  background-color: var(--third-color);
+  box-shadow: 0 0 25px 0 rgb(255, 0, 0), 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+}
+
+.boton1 button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.boton1 img {
+  width: 100%;
+  height: 100%;
+}

@@ -1,0 +1,11 @@
+<ul class="timeline">
+    <li *ngFor="let service of servicios; let index = index">
+      <div [ngClass]="{'direction-r': isEven(index), 'direction-l': !isEven(index)}">
+        <div class="flag-wrapper">
+          <span class="flag">{{ service.title }}</span>
+          <span class="time-wrapper"><span class="time">{{ service.date | date: 'dd/MM/yyyy' }}</span></span>
+        </div>
+        <div class="desc">{{ service.description }}</div>
+      </div>
+    </li>
+</ul>

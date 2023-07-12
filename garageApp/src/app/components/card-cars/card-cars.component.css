@@ -1,0 +1,128 @@
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
+  }
+  
+  .card {
+    width: 20vw;
+    height: 70vh;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    position: relative;
+    perspective: 1000px;
+    cursor: pointer;
+    transition: transform 0.5s;
+  }
+  
+  .front, .back {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    transition: transform 0.5s, opacity 0.5s;
+    transform-style: preserve-3d;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  
+  .front {
+    transform: rotateY(0deg);
+    background-color:var(--primary-color);
+    z-index: 2;
+  }
+  
+  
+  .back {
+    transform: rotateY(-180deg);
+    background-color: var(--third-color);
+    border: 4px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    opacity: 0;
+    z-index: 1;
+  }
+  
+  .card:hover .front {
+    transform: rotateY(180deg);
+    opacity: 0;
+  }
+  
+  .card:hover .back {
+    transform: rotateY(0deg);
+    opacity: 1;
+  }
+  
+  h2 {
+    color: var(--secondary-color);
+    font-family: var(--texto);
+  }
+  
+  .car-details{
+    border-top: 2px solid red;
+    padding-top: 30px;
+    border-bottom: 2px solid red;
+    padding-bottom: 30px;
+  }
+  p {
+    font-weight: bolder;
+    text-align: left;
+    font-size: 16px;
+    font-family: var(--texto);
+  }
+  
+  img {
+    width: 90%;
+    height: 45%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+  
+  .dato {
+    color: red;
+    text-align: right;
+  }
+  
+  .matricula {
+    width: 50%;
+    display: flex;
+    color: red;
+    border: 2px solid black;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .azul {
+    width: 25%;
+    height: 100%;
+    background-color: blue;
+    color: gold;
+    border-right: 2px solid black;
+    font-size: 25px;
+  }
+  
+  .blanco {
+    width: 75%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  
+  

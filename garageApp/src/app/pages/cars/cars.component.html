@@ -1,0 +1,49 @@
+<body>
+    <div class="presentacion">
+      <div class="opciones">
+        <!-- <div class="boton1" routerLink="">
+          <button><img src="./assets/img/info.png" alt=""> </button>          
+        </div> -->
+        <div class="boton2" routerLink="/add-cars">
+          <button><img src="./assets/img/addCarImg.png" alt=""> </button>          
+        </div>
+      </div>
+      <div class="nombre">
+        <h1>Hola <span class="name">Manolo</span> </h1>
+        <h3>Tus vehículos actualmente son:</h3>
+      </div>
+      <div class="opciones1">
+        <div class="boton3">
+            <button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <img src="./assets/img/delCarImg.png" alt="">
+            </button>             
+        </div>
+        <div class="boton4" routerLink="/update-cars">
+          <button><img src="./assets/img/updCarImg.png" alt=""> </button>
+        </div>
+      </div>
+    </div>
+    <div class="cardsCars">
+      <app-card-cars></app-card-cars>
+    </div>
+  
+    <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header" style="background-color: red;">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Elimina un Vehículo</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <input type="text" class="form-control" name="modelo" placeholder="Introduce la matricula a eliminar"  style="background-color: white; color:red; border: 1px dotted red; text-align: center;">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" style="font-family: var(--texto);">Eliminar</button>
+        </div>
+      </div>
+    </div>
+</div>
+  
+</body>
+  

@@ -1,1 +1,13 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --primary-color: white;
+    --secondary-color: red;
+    --third-color: #d9d9d9;
+    --titulo: 'Dancing Script', cursive;
+    --texto: 'Pacifico';
+}

@@ -1,0 +1,28 @@
+<body>
+    <div class="presentacion">       
+        <div class="titulo">
+            <h1>El historial de tu vehículo <span class="coche">BMW M8</span> es: </h1>
+        </div>
+    </div>
+        <div class="historial">
+                <div class="cajaSearch">
+                <div class="containerSearch">
+                    <input type="text" placeholder="Fecha Mantenimiento">
+                    <div class="search"></div>
+                </div>
+                </div>
+            <app-card-service></app-card-service>
+            <div class="cajaAdd">
+                <form class="serviceForm">     
+                    <h2>Añade un mantenimiento</h2>
+                    <input type="text" name="titulo" placeholder="Título" required>
+                    <input type="date" name="fecha" required>
+                    <input type= "text" name="descripcion" placeholder="Descripción" required>
+                </form>                   
+                <button type="submit" class="Button">+</button>            
+            </div>
+        </div>
+
+      
+    
+</body>
