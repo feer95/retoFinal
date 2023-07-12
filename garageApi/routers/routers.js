@@ -15,16 +15,16 @@ router.use((req, res, next) =>
 });
 
 // Usuarios
-router.get("/users", usuarioCtrl.getUsers); // OK
-router.post("/register", usuarioCtrl.postUser); // OK
-router.post("/login", usuarioCtrl.verify); // OK 
-// EDITAR USER 
+router.get("/users", usuarioCtrl.getUsers); 
+router.post("/register", usuarioCtrl.postUser); 
+router.post("/login", usuarioCtrl.verify); 
+router.put('/users', usuarioCtrl.updateUser); 
 
 
 // Coches
 router.get('/cars/:id_usuario', cochesCtrl.getAll); // OK
 router.post('/cars', cochesCtrl.createCar); // OK
-router.put('/cars', cochesCtrl.updateCar); // OK ?? Revisar el request de postman!!
+router.put('/cars', cochesCtrl.updateCar); // OK 
 router.delete('/cars', cochesCtrl.deleteCar); // OK
 
 // // Mantenimientos

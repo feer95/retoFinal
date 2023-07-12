@@ -57,8 +57,42 @@ const verify = async (request, response) => {
     console.log(error);
   }
 };
-  
-  
 
+//========================EDITAR USUARIO=============================
 
-module.exports = {getUsers, postUser, verify}
+async function updateUser(request, response) 
+{
+    let idUser = request.body.id_usuario;
+    let nombre = request.body.nombre;
+    let apellidos = request.body.apellidos;
+    let edad = request.body.edad;
+    let email = request.body.email;
+    let password = request.body.password;
+  
+    if (idUser != null) 
+    {
+      let sql = 'UPDATE usuario SET nombre = ?, apellidos = ?, edad = ?, email = ?, password = ? WHERE id_usuario = ?';
+      let values = [nombre, apellidos, edad, email, password, idUser];
+  
+        try 
+        {
+            await pool.query(sql, values);
+            console.log('Update ok');
+            const respuesta = { error: false, message: 'Editado!', data: [] };
+            response.send(respuesta);
+        } 
+        catch (error) 
+        {
+            console.log(error);
+            const respuesta = { error: true, message: 'No editado!', data: [] };
+            response.send(respuesta);
+        }
+    } 
+    else 
+    {
+      respuesta = { error: false, message: 'No lo encontramos!', data: [] };
+      response.send(respuesta);
+    }
+}
+
+module.exports = {getUsers, postUser, verify, updateUser}

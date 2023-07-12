@@ -79,10 +79,7 @@ async function createCar(request, response)
 
 //==================================================================================    
 
-async function updateCar(request, response) 
-{
-    let id_coches = request.body.id_coches;
-    let id_usuario = request.body.id_usuario;
+async function updateCar(request, response) {
     let marca = request.body.marca;
     let modelo = request.body.modelo;
     let matricula = request.body.matricula;
@@ -91,32 +88,27 @@ async function updateCar(request, response)
     let color = request.body.color;
     let combustible = request.body.combustible;
     let cv = request.body.cv;
-
-    if (matricula != null) 
-    {
-        let sql = 'UPDATE coches SET id_usuario = ?,marca = ?, modelo = ?, matricula = ?, anoFabricacion = ?, kilometraje = ?, color = ?, combustible = ?, cv = ?  WHERE id_coches = ?';
-        let values = [id_coches, id_usuario, marca, modelo, matricula, anoFabricacion, kilometraje, color, combustible, cv];
-
-        try 
-        {
-            await pool.query(sql, values);
-            console.log('Update ok');
-            const respuesta = { error: false, message: 'Editado!', data: [] };
-            response.send(respuesta);
-        } 
-        catch (error) 
-        {
-            console.log(error);
-            const respuesta = { error: true, message: 'No editado!', data: [] };
-            response.send(respuesta);
-        }
-    } 
-    else 
-    {
-        respuesta = { error: false, message: 'No lo encontramos!', data: [] };
+  
+    if (matricula) {
+      let sql = 'UPDATE coches SET  marca = ?, modelo = ?, anoFabricacion = ?, kilometraje = ?, color = ?, combustible = ?, cv = ? WHERE matricula = ?';
+      let values = [marca, modelo, anoFabricacion, kilometraje, color, combustible, cv, matricula];
+  
+      try {
+        await pool.query(sql, values);
+        console.log('Update OK');
+        const respuesta = { error: false, message: 'Editado!', data: [] };
         response.send(respuesta);
+      } catch (error) {
+        console.log(error);
+        const respuesta = { error: true, message: 'No editado!', data: [] };
+        response.send(respuesta);
+      }
+    } else {
+      const respuesta = { error: false, message: 'No se proporcionó la matrícula!', data: [] };
+      response.send(respuesta);
     }
-}
+  }
+  
 
 //================================================================================== 
 
