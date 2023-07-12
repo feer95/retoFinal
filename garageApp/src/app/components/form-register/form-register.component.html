@@ -1,5 +1,5 @@
-<form>
-    <div class="login-group">
+<form (submit)="onSubmit()">
+  <div class="login-group">
       <h2>REGISTRATE</h2>
       <div class="form-control">
         <input type="text" class="form-control" name="nombre" placeholder="Nombre" [(ngModel)]="user.nombre" #nombreId="ngModel"
@@ -21,6 +21,17 @@
           </div>
         </div>
       </div>
+      <div class="form-control">
+        <input type="number" class="form-control" name="edad" placeholder="Edad" [(ngModel)]="user.edad" #edadId="ngModel"
+          [ngClass]="{ 'is-invalid': (edadId.dirty || edadId.touched) && edadId.invalid }" required>
+        <div *ngIf="(edadId.dirty || edadId.touched) && edadId.invalid" class="form-control-error">
+          <div class="hueco">
+            <div *ngIf="edadId.errors?.['required']">Edad obligatoria</div>
+            <img class="engine" src="./assets/img/avisoError.png">
+          </div>
+        </div>
+      </div>
+      
       <div class="form-control">
         <input type="email" class="form-control" name="email" placeholder="Email" [(ngModel)]="user.email" #emailId="ngModel"
           [ngClass]="{ 'is-invalid': (emailId.dirty || emailId.touched) && emailId.invalid }" email required>

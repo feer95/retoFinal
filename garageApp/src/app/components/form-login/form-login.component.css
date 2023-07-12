@@ -28,6 +28,10 @@ button {
     background-color: transparent;
     border: none;
 }
+.btn {
+    border: none;
+}
+
 
 img {
     width: 100px;

@@ -1,4 +1,4 @@
-<form>
+<form (ngSubmit)="onSubmit(userForm)" #userForm="ngForm">
     <div class="login-group">
       <h2>LOGIN</h2>
       <div class="form-control">
@@ -15,7 +15,7 @@
       <div class="form-control">
         <input type="password" class="form-control" name="password" placeholder="Contraseña"
           [(ngModel)]="user.password" #passwordId="ngModel"
-          [ngClass]="{ 'is-invalid': (passwordId.dirty || passwordId.touched) && passwordId.invalid }" minlength="8"
+          [ngClass]="{ 'is-invalid': (passwordId.dirty || passwordId.touched) && passwordId.invalid }" 
           required>
         <div *ngIf="(passwordId.dirty || passwordId.touched) && passwordId.invalid" class="">
           <div class="hueco">
@@ -24,8 +24,8 @@
           </div>
         </div>
       </div>
-      <div class="btn">
-        <button type="submit">
+      <div class="btn" >
+        <button>
           <img
             src="https://static.vecteezy.com/system/resources/previews/009/304/571/non_2x/start-and-stop-engine-button-clipart-design-illustration-free-png.png"
             alt="">

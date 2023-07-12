@@ -1,61 +1,95 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Car } from 'src/app/models/car';
+import { Respuesta } from 'src/app/models/respuesta';
+import { CochesService } from 'src/app/shared/coches.service';
 
 @Component({
   selector: 'app-card-cars',
   templateUrl: './card-cars.component.html',
   styleUrls: ['./card-cars.component.css']
 })
-export class CardCarsComponent {
-  cars = [
-    { marca: 'Nissan', modelo: 'Corolla', matricula: "1234ABC", anoFabricacion: 2020, kilometraje: 50000, color: 'Rojo', combustible: 'Gasolina', cv: 150 },
-    { marca: 'Volvo', modelo: 'M8 Competition',  matricula: "1234BCA", anoFabricacion: 2019, kilometraje: 2000, color: 'Rojo', combustible: 'Gasolina', cv: 625 },
-    { marca: 'Mini', modelo: 'Civic',  matricula: "1234CBA", anoFabricacion: 2018, kilometraje: 70000, color: 'Azul', combustible: 'Gasolina', cv: 130 }
-  ];
+export class CardCarsComponent implements OnInit {
+  @Input() idUsuario: number = 0;
+  cars: Car[] = [];
 
-  getImageUrl(marca: string): string {
-    if (marca === 'Toyota') {
+  constructor(private cochesService: CochesService) {}
+
+  ngOnInit(): void {
+    this.getCars();
+  }
+
+  getCars(): void {
+    this.cochesService.getOne(this.idUsuario).subscribe(
+      (respuesta: any) => {
+        console.log("Respuesta:", respuesta);
+        if (!respuesta.error) {
+          this.cars = respuesta.data;
+          console.log("coches:", this.cars);
+        } else {
+          console.log('Error al obtener los coches:', respuesta.message);
+        }
+      },
+      (error) => {
+        console.log('Error al obtener los coches:', error);
+      }
+    );
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+
+  getImageUrl(marca: string | undefined): string {
+    if (!marca) {
+      return './assets/img/else.png';
+    } else if (marca === 'Toyota') {
       return './assets/img/toyota.png';
-    } else if (marca == 'Honda') {
+    } else if (marca === 'Honda') {
       return './assets/img/honda.png';
-    } else if (marca == 'Bmw') {
+    } else if (marca === 'Bmw') {
       return './assets/img/bmw.png';
-    } else if (marca == 'Volkswagen') {
+    } else if (marca === 'Volkswagen') {
       return './assets/img/volkswagen.png';
-    } else if (marca == 'Renault') {
+    } else if (marca === 'Renault') {
       return './assets/img/renault.png';
-    } else if (marca == 'Peugeot') {
+    } else if (marca === 'Peugeot') {
       return './assets/img/peugeot.png';
-    } else if (marca == 'Ford') {
+    } else if (marca === 'Ford') {
       return './assets/img/ford.png';
-    } else if (marca == 'Mercedes') {
+    } else if (marca === 'Mercedes') {
       return './assets/img/mercedes.png';
-    } else if (marca == 'Audi') {
+    } else if (marca === 'Audi') {
       return './assets/img/audi.png';
-    } else if (marca == 'Opel') {
+    } else if (marca === 'Opel') {
       return './assets/img/opel.png';
-    } else if (marca == 'Fiat') {
+    } else if (marca === 'Fiat') {
       return './assets/img/fiat.png';
-    } else if (marca == 'Skoda') {
+    } else if (marca === 'Skoda') {
       return './assets/img/skoda.png';
-    } else if (marca == 'Volvo') {
+    } else if (marca === 'Volvo') {
       return './assets/img/volvo.png';
-    } else if (marca == 'Nissan') {
+    } else if (marca === 'Nissan') {
       return './assets/img/nissan.png';
-    } else if (marca == 'Citroen') {
+    } else if (marca === 'Citroen') {
       return './assets/img/citroen.png';
-    } else if (marca == 'Seat') {
+    } else if (marca === 'Seat') {
       return './assets/img/seat.png';
-    } else if (marca == 'Hyundai') {
+    } else if (marca === 'Hyundai') {
       return './assets/img/hyundai.png';
-    } else if (marca == 'Kia') {
+    } else if (marca === 'Kia') {
       return './assets/img/kia.png';
-    } else if (marca == 'Mazda') {
+    } else if (marca === 'Mazda') {
       return './assets/img/mazda.png';
-    } else if (marca == 'Mini') {
+    } else if (marca === 'Mini') {
       return './assets/img/mini.png';
     } else {
-       return './assets/img/else.png'
+      return './assets/img/else.png';
     }
   }
+  
 
 }
