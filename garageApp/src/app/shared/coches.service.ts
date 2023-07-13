@@ -31,7 +31,7 @@ export class CochesService {
   }
 
   delete(matricula: string): Observable<any> {
-    const deletedCar = { matricula: matricula };
+    let deletedCar = { matricula: matricula };
     return this.http.delete(this.url, { body: deletedCar });
   }
   

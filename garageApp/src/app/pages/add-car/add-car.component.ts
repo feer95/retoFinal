@@ -4,6 +4,7 @@ import { Car } from 'src/app/models/car';
 import { User } from 'src/app/models/user';
 import { CochesService } from 'src/app/shared/coches.service';
 import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-car',
@@ -20,7 +21,7 @@ export class AddCarComponent {
   combustible?: string;
   cv?: number;
   
-  constructor(public userService: UsuarioService, private cochesService: CochesService, private toastr : ToastrService) {}
+  constructor(public userService: UsuarioService, private cochesService: CochesService, private toastr : ToastrService, private router: Router) {}
 
   addCar(): void {
     const nuevoCoche: Car = {
@@ -39,6 +40,7 @@ export class AddCarComponent {
       (data: any) => {
         this.toastr.success('El coche se agregó correctamente');
         console.log("coche Añadido", data);
+        this.router.navigate(['/cars']);
       },
       (error) => {
         console.log('Error al agregar el coche:', error);

@@ -22,15 +22,15 @@ router.put('/users', usuarioCtrl.updateUser);
 
 
 // Coches
-router.get('/cars/:id_usuario', cochesCtrl.getAll); // OK
-router.post('/cars', cochesCtrl.createCar); // OK
-router.put('/cars', cochesCtrl.updateCar); // OK 
-router.delete('/cars', cochesCtrl.deleteCar); // OK
+router.get('/cars/:id_usuario', cochesCtrl.getAll); 
+router.post('/cars', cochesCtrl.createCar); 
+router.put('/cars', cochesCtrl.updateCar); 
+router.delete('/cars', cochesCtrl.deleteCar); 
 
 // // Mantenimientos
-router.get('/mantenimiento/:id_coches', mantenimientoCtrl.getAllMant); // OK
-router.post('/mantenimiento', mantenimientoCtrl.createMant); // OK ?? Where id_coches
-router.get('/mantenimiento', mantenimientoCtrl.getMantId); // OK
+router.get('/mantenimientos/:id_coches', mantenimientoCtrl.getAllMant); // OK
+router.post('/mantenimiento', mantenimientoCtrl.createMant); // OK 
+router.get('/mantenimiento/:fecha', mantenimientoCtrl.getMantId); // OK
 
 
 module.exports = router;

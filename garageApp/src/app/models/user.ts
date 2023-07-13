@@ -1,6 +1,6 @@
 export class User 
 {
-    id_usuario?: Number ;
+    id_usuario?: number ;
     nombre?: string ;
     apellidos?: string ;
     edad?: number ;

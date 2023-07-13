@@ -1,4 +1,9 @@
 import { Component } from '@angular/core';
+import { MantenimientosService } from 'src/app/shared/mantenimientos.service';
+import { Mantenimiento } from 'src/app/models/mantenimiento';
+import { Respuesta } from 'src/app/models/respuesta';
+import { Car } from 'src/app/models/car';
+
 
 @Component({
   selector: 'app-card-service',
@@ -6,15 +11,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./card-service.component.css']
 })
 export class CardServiceComponent {
-  servicios = [
-    { title: 'Servicio 1', description: 'Descripción del Servicio 1', date: new Date('2023-01-01') },
-    { title: 'Servicio 2', description: 'Descripción del Servicio 2', date: new Date('2023-02-01') },
-    { title: 'Servicio 3', description: 'Descripción del Servicio 3', date: new Date('2023-03-01') },
-    { title: 'Servicio 4', description: 'Descripción del Servicio 4', date: new Date('2023-04-01') },
+
+  mantenimientos: Mantenimiento[] = [];
+
+    constructor (public mantenimientosService: MantenimientosService) {}
+
     
-
-
-  ];
+    
+    
 
   isEven(index: number): boolean {
     return index % 2 === 0;

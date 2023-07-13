@@ -79,7 +79,7 @@ async function getMantId(request, response)
 {
     try 
     {
-        let mant = request.body.fecha;
+        let mant = request.params.fecha;
         if (mant != null) 
         {
             let sql = 'SELECT * FROM mantenimiento WHERE fecha = ?';

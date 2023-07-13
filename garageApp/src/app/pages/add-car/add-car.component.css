@@ -78,3 +78,11 @@ img:hover
     background: none;
     color: red;
 }
+
+.buttonbox {
+    position: absolute; 
+    top: 7%; 
+    transform: translateX(-200%); 
+    display: block;
+   
+}

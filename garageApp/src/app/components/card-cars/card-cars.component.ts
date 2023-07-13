@@ -1,7 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Car } from 'src/app/models/car';
 import { Respuesta } from 'src/app/models/respuesta';
 import { CochesService } from 'src/app/shared/coches.service';
+import { MantenimientosService } from 'src/app/shared/mantenimientos.service';
+import { CardServiceComponent } from '../card-service/card-service.component';
 
 @Component({
   selector: 'app-card-cars',
@@ -11,8 +13,9 @@ import { CochesService } from 'src/app/shared/coches.service';
 export class CardCarsComponent implements OnInit {
   @Input() idUsuario: number = 0;
   cars: Car[] = [];
+  numeroCoches?: number;
 
-  constructor(private cochesService: CochesService) {}
+  constructor(private cochesService: CochesService, private mantenimientosService: MantenimientosService) {}
 
   ngOnInit(): void {
     this.getCars();
@@ -24,24 +27,16 @@ export class CardCarsComponent implements OnInit {
         console.log("Respuesta:", respuesta);
         if (!respuesta.error) {
           this.cars = respuesta.data;
+          this.numeroCoches = respuesta.data.length
           console.log("coches:", this.cars);
+          console.log("Numero de coches:" , this.numeroCoches);
+          
         } else {
           console.log('Error al obtener los coches:', respuesta.message);
         }
-      },
-      (error) => {
-        console.log('Error al obtener los coches:', error);
       }
     );
   }
-  
-  
-  
-  
-  
-  
-  
-  
 
   getImageUrl(marca: string | undefined): string {
     if (!marca) {

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UsuarioService } from 'src/app/shared/usuario.service';
 
 @Component({
@@ -7,8 +8,20 @@ import { UsuarioService } from 'src/app/shared/usuario.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  constructor(public userService: UsuarioService) {}
+  mostrarHeader: boolean = true;
+
+  constructor(public userService: UsuarioService, private router: Router) {}
 
   ngOnInit(): void {
+    this.mostrarHeader = this.showHeader();
+  }
+
+  showHeader(): boolean {
+    const rutaActual = this.router.url;
+
+    if (rutaActual === '' || rutaActual === 'login' || rutaActual === 'register') {
+      return false;
+    }
+    return true;
   }
 }

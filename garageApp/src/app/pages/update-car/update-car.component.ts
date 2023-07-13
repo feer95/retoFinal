@@ -10,8 +10,7 @@ import { UsuarioService } from 'src/app/shared/usuario.service';
   styleUrls: ['./update-car.component.css']
 })
 export class UpdateCarComponent implements OnInit {
-  car: Car = {
-  };
+  car: Car = {};
 
   constructor(
     private cochesService: CochesService,

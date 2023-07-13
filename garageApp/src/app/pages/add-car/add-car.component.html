@@ -3,6 +3,9 @@
     <main style="background-image: url('assets/img/fondoImg.png'); background-size: cover;">
         <form (ngSubmit)="addCar()">
             <div class="login-group">
+              <div class="buttonbox" routerLink="/cars">
+                <img class="icon" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/150579/closing_only_264.gif">
+              </div>
               <h1>Añade un Coche</h1>
               <input type="text" class="form-control" name="marca" placeholder="Marca" [(ngModel)]="marca">
               <input type="text" class="form-control" name="modelo" placeholder="Modelo" [(ngModel)]="modelo">

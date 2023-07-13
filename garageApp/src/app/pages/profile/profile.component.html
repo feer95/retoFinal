@@ -28,8 +28,8 @@
       </div>
       <div class='screen'>
         <button class='edit-button' routerLink="/update-user">Editar</button>
-        <h2>Fernando Alonso</h2>
-        <p>Email: alonso@correo.com</p>
+        <h2>{{ userService.user.nombre }} {{ userService.user.apellidos }}</h2>
+        <p>Email: {{ userService.user.email }}</p> 
       </div>
     </div>
 

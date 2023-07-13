@@ -1,16 +1,13 @@
 <body>
     <div class="presentacion">
       <div class="opciones">
-        <!-- <div class="boton1" routerLink="">
-          <button><img src="./assets/img/info.png" alt=""> </button>          
-        </div> -->
         <div class="boton2" routerLink="/add-cars">
           <button><img src="./assets/img/addCarImg.png" alt=""> </button>          
         </div>
       </div>
       <div class="nombre">
-        <h1>Hola <span class="name">{{ userService.user.nombre }}</span> </h1>
-        <h3>Tus vehículos actualmente son:</h3>
+        <h1>Hola <span class="name">{{ userService.user.nombre }}</span>, </h1>
+        <h3>Actualmente tienes <span class="name">{{ numeroCoches }}</span> coches</h3>
       </div>
       <div class="opciones1">
         <div class="boton3">
@@ -23,7 +20,7 @@
         </div>
       </div>
     </div>
-    <div class="cardsCars">
+    <div class="cardsCars" *ngFor="let car of cars">
       <app-card-cars [idUsuario]="userService.logueadoId"></app-card-cars>
     </div>
   
@@ -39,7 +36,7 @@
         <input type="text" class="form-control" [(ngModel)]="matriculaEliminar" placeholder="Introduce la matricula a eliminar" style="background-color: white; color:red; border: 1px dotted red; text-align: center;">
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-danger" style="font-family: var(--texto);" (click)="eliminarCoche()">Eliminar</button>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal" style="font-family: var(--texto);" (click)="eliminarCoche()">Eliminar</button>
       </div>
     </div>
   </div>

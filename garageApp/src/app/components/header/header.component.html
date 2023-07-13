@@ -1,6 +1,7 @@
 <body>
-  <ng-container *ngIf="!userService.logueado" [ngStyle]=>
-    
+  <ng-container *ngIf="!userService.logueado">
+    <a routerLink="/login" routerLinkActive="active">Entra</a>
+    <a routerLink="/register" routerLinkActive="active">Registrate</a>
   </ng-container>
   
   <!-- ******************************************************************* -->
